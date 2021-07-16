@@ -1,0 +1,48 @@
+<main class="grid place-items-center min-h-screen bg-gradient-to-t from-biege-500 to-gray-900 p-5">
+  <div>
+
+
+    <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-black-200 mb-5">the Cinema</h1>
+    <section class="grid grid-cols-1 sm:grid-cols-3 gap-4 ">
+
+      <% @lists.each do |list| %>
+
+      <!-- CARD 1 -->
+      <div class="bg-gray-900 shadow-lg rounded p-3 bg-cover rounded">
+        <div class="group relative">
+          <img class="w-full md:w-72 block rounded" src= <%= list.imageurl%> alt="" />
+          <div class="absolute bg-black rounded bg-opacity-0 group-hover:bg-opacity-60 w-full h-full top-0 flex items-center group-hover:opacity-100 transition justify-evenly">
+
+            <%= link_to list_path(list) do %>
+            <button class="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
+              </svg>
+            </button>
+          <% end %>
+
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-white text-lg"> <%= list.name %> </h3>
+          <p class="text-gray-400"> </p>
+        </div>
+      </div>
+      <!-- END OF CARD 1 -->
+
+       <% end %>
+
+
+
+
+
+    </section>
+
+  <h3 class="text-0.5xl sm:text-1xl md:text-2xl font-bold text-gray-200 mb-5"><%= link_to 'Add New', new_list_path %></h3>
+
+  </div>
+
+
+
+
+</main>

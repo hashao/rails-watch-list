@@ -5,5 +5,5 @@ class List < ApplicationRecord
 
   validates :name, presence: true
   validates :name, uniqueness: true
-
+  validates :imageurl, presence: true
 end
